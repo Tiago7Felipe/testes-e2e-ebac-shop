@@ -27,7 +27,27 @@
 
 Cypress.Commands.add('login', (usuario, senha) => {
     cy.get('#username').type(usuario)
-    cy.get('#password').type(senha, {log: false})
+    cy.get('#password').type(senha, { log: false })
     cy.get('.woocommerce-form > .button').click()
 });
 
+Cypress.Commands.add('produtos', (tamanho, cor) => {
+    
+    cy.get(tamanho).click()
+    cy.get(cor).click()
+    cy.get('.single_add_to_cart_button').click() 
+
+});
+
+Cypress.Commands.add('adicionarItem', (produto) => { 
+    cy.get('#primary-menu > .menu-item-629 > a').click()
+    cy.get('[class="products products-grid"]')
+        .contains(produto)
+        .click()
+});
+
+Cypress.Commands.add('checkout', () => {
+    cy.get('.dropdown-toggle > .text-skin > .icon-basket').click()
+    cy.get('#cart > .dropdown-menu > .widget_shopping_cart_content > .mini_cart_content > .mini_cart_inner > .mcart-border > .buttons > .checkout').click()
+
+});
