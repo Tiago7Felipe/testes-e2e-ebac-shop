@@ -23,29 +23,17 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
 
     it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
         //Adicionando itens ao carrinho
-        var item = 'Abominable Hoodie'
-        var tamanho = '.button-variable-item-L'
-        var cor = '.button-variable-item-Green'
-        cy.adicionarItem(item)
-        cy.produtos(tamanho, cor)
+        cy.adicionarItem('Abominable Hoodie')
+        cy.produtos('.button-variable-item-L', '.button-variable-item-Green')
 
-        item = 'Aero Daily Fitness Tee'
-        tamanho = '.button-variable-item-M'
-        cor = '.button-variable-item-Yellow'
-        cy.adicionarItem(item)
-        cy.produtos(tamanho, cor)
+        cy.adicionarItem('Aero Daily Fitness Tee')
+        cy.produtos('.button-variable-item-M', '.button-variable-item-Yellow')
 
-        item = 'Apollo Running Short'
-        tamanho = '.button-variable-item-36'
-        cor = ':nth-child(2) > .value > .variable-items-wrapper > .variable-item'
-        cy.adicionarItem(item)
-        cy.produtos(tamanho, cor)
-
-        item = 'Atlas Fitness Tank'
-        tamanho = '.button-variable-item-S'
-        cor = ':nth-child(2) > .value > .variable-items-wrapper > .variable-item'
-        cy.adicionarItem(item)
-        cy.produtos(tamanho, cor)
+        cy.adicionarItem('Apollo Running Short')
+        cy.produtos('.button-variable-item-36', ':nth-child(2) > .value > .variable-items-wrapper > .variable-item')
+        
+        cy.adicionarItem('Atlas Fitness Tank')
+        cy.produtos('.button-variable-item-S', ':nth-child(2) > .value > .variable-items-wrapper > .variable-item')
 
         //Validar quantidade adicionada ao carrinho
         var qnt = 4
