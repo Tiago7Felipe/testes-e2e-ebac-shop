@@ -31,19 +31,15 @@ Cypress.Commands.add('login', (usuario, senha) => {
     cy.get('.woocommerce-form > .button').click()
 });
 
-Cypress.Commands.add('produtos', (tamanho, cor) => {
-    
-    cy.get(tamanho).click()
-    cy.get(cor).click()
-    cy.get('.single_add_to_cart_button').click() 
-
-});
-
-Cypress.Commands.add('adicionarItem', (produto) => { 
+Cypress.Commands.add('produtos', (produto,tamanho, cor) => {
     cy.get('#primary-menu > .menu-item-629 > a').click()
     cy.get('[class="products products-grid"]')
         .contains(produto)
         .click()
+    cy.get('.button-variable-item-'+ tamanho).click()
+    cy.get('.button-variable-item-' + cor).click()
+    cy.get('.single_add_to_cart_button').click() 
+
 });
 
 Cypress.Commands.add('checkout', () => {

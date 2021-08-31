@@ -23,17 +23,13 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
 
     it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
         //Adicionando itens ao carrinho
-        cy.adicionarItem('Abominable Hoodie')
-        cy.produtos('.button-variable-item-L', '.button-variable-item-Green')
+        cy.produtos('Abominable Hoodie','L', 'Green')
 
-        cy.adicionarItem('Aero Daily Fitness Tee')
-        cy.produtos('.button-variable-item-M', '.button-variable-item-Yellow')
+        cy.produtos('Aero Daily Fitness Tee','M', 'Yellow')
 
-        cy.adicionarItem('Apollo Running Short')
-        cy.produtos('.button-variable-item-36', ':nth-child(2) > .value > .variable-items-wrapper > .variable-item')
-        
-        cy.adicionarItem('Atlas Fitness Tank')
-        cy.produtos('.button-variable-item-S', ':nth-child(2) > .value > .variable-items-wrapper > .variable-item')
+        cy.produtos('Apollo Running Short','36', 'Black')
+
+        cy.produtos('Atlas Fitness Tank','S', 'Blue')
 
         //Validar quantidade adicionada ao carrinho
         var qnt = 4
