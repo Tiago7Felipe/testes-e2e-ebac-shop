@@ -45,6 +45,25 @@ Após abrir o dasboard, clique na opção "Running integration tests" para rodar
 -Faker: Biblioteca para geração de massa de dados: https://www.npmjs.com/package/faker
 
 
+Cypress
+
+Instalar o Node.JS
+Ferramenta de dev - como o visual code
+
+ES6 Mocha 
+Bracket Pair Colorizer - deixa colorido o código
+Cypress Snippets - 
+Material Icon Theme - criar ícones pra pasta
+Visual Studio IntelliCode - completa os trechos de código
+
+Criar o projeto node → npm init -y (Dentro da pasta que queira) - controlador de pacotes e do projeto -- package.json
+Instalar o Cypress → npm install cypress -D -  cria o node modules, tudo que será necessário para o projeto, dependência de diretórios
+Abrir o Cypress → npx cypress open -  Abrir o open
+
+suporte:  https://docs.cypress.io/guides/getting-started/installing-cypress
+
+faker - npm install faker - para a geração de dados aleatórios
+página faker - https://www.npmjs.com/package/faker
 
 
 
