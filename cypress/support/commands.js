@@ -44,6 +44,7 @@ Cypress.Commands.add('produtos', (produto,tamanho, cor) => {
 
 Cypress.Commands.add('checkout', () => {
     cy.get('.dropdown-toggle > .text-skin > .icon-basket').click()
+    cy.wait(4000)
     cy.get('#cart > .dropdown-menu > .widget_shopping_cart_content > .mini_cart_content > .mini_cart_inner > .mcart-border > .buttons > .checkout').click()
 
 });
